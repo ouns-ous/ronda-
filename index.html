@@ -1,21 +1,23 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102d27"><title>روندا • الكارطة المغربية</title><link rel="stylesheet" href="style.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2e1b"><title>روندا • الكارطة المغربية</title><link rel="stylesheet" href="css/hez2.css"><link rel="stylesheet" href="style.css"></head>
 <body>
-<header><a href="./index.html" class="brand">الكارطة <span>البلدية</span></a><div class="actions"><button id="rules">كيفاش نلعب؟</button><button id="new">لعبة جديدة</button></div></header>
+<div class="felt" aria-hidden="true"><img class="felt-decor" src="assets/table/teapot.svg" alt=""></div>
+<header class="topbar"><div class="topbar-left"><button id="home" class="btn-wood-icon btn-top-home" aria-label="الرئيسية"></button><button id="rules" class="btn-wood-icon btn-gear-wood" aria-label="كيفاش نلعب؟"></button><button id="new" class="btn-wood-icon btn-top-new" aria-label="لعبة جديدة"></button><button id="history" class="btn-wood-icon btn-top-log" aria-label="سجل الأحداث"></button></div><div class="brand"><div><h1>روندا</h1><p class="brand-sub">الكارطة البلدية</p></div></div><div class="score"><div class="score-cols"><span>نتا</span><span>الكمبيوتر</span></div><div class="score-nums"><div class="score-col"><b id="my-score">0</b></div><span class="score-divider"></span><div class="score-col"><b id="bot-score">0</b></div></div></div></header>
 <main>
-<div class="heading"><div><small>قهوة، كارطة، وشي ميسّا.</small><h1>روندا<span>RONDA</span></h1></div><div class="goal">الهدف <b>41</b> نقطة</div></div>
 <section class="game" aria-label="طابلة اللعب">
-<div class="player opponent"><div class="avatar">☕</div><div><b>الكمبيوتر</b><small id="bot-count"></small></div><strong id="bot-score">0</strong></div>
+<div class="player opponent seat seat-tr"><div class="avatar avatar-kim"></div><div class="seat-name"><b>Kim · الكمبيوتر</b><small id="bot-count"></small></div></div>
 <div id="opponent-hand" class="hand backs" aria-label="ورق الكمبيوتر"></div>
 <div class="table-wrap"><div class="deck"><img src="assets/cards/back.png" alt="الرزمة"><span id="stock"></span></div><div id="table" class="table" aria-label="الورق فالطابلة"></div></div>
-<div class="message" id="message" role="status" aria-live="polite"></div>
+<div class="message turn-label" id="message" role="status" aria-live="polite"></div><div id="bubble" class="hidden"></div>
 <div id="hand" class="hand" aria-label="الورق ديالك"></div>
-<div class="player self"><div class="avatar">👤</div><div><b>نتا</b><small id="my-count"></small></div><strong id="my-score">0</strong></div>
+<div class="player self seat seat-bl"><div class="avatar avatar-sanduslow"></div><div class="seat-name"><b>نتا</b><small id="my-count"></small></div></div>
 <div id="end" class="end" hidden><h2 id="result"></h2><p id="summary"></p><button id="continue">الدورة الجاية</button></div>
 </section>
 <footer><span id="round"></span><span>جوج لاعبين · ضد الكمبيوتر</span><button id="sound" aria-pressed="false">الصوت: مطفي</button></footer>
 </main>
+<div id="homeScreen" class="home-screen"><div class="home-felt"><div class="home-decor"></div><header class="home-header"><h1 class="home-title">روندا</h1><p class="home-sub">الكارطة البلدية المغربية</p><div class="home-tagline">أجواء القهوة الشعبية والكارطة التقليدية</div></header><div class="home-fan" aria-hidden="true"><div class="home-fan-card fan-1"><img src="assets/cards/syouf-10.svg" alt=""></div><div class="home-fan-card fan-2"><img src="assets/cards/kass-11.svg" alt=""></div><div class="home-fan-card fan-3"><img src="assets/cards/dhab-7.svg" alt=""></div><div class="home-fan-card fan-4"><img src="assets/cards/zrawet-2.svg" alt=""></div><div class="home-fan-card fan-5"><img src="assets/cards/dhab-1.svg" alt=""></div></div><div class="home-modes-box"><span class="home-modes-label">جوج لاعبين · نتا ضد Kim · الهدف 41 نقطة</span></div><div class="home-cta"><button id="play" class="btn-play-big"><span class="btn-play-content"><span class="btn-play-title">ابدا اللعب</span></span></button></div><div class="home-actions"><button id="homeRules" class="btn btn-wood">كيفاش نلعب؟</button></div></div></div>
+<dialog id="logDialog"><h2>سجل الأحداث</h2><ol id="log"></ol><button id="close-log" class="btn btn-wood">سدّ</button></dialog>
 <dialog id="help"><h2>كيفاش تلعب الروندا؟</h2><p>كتاخد 3 ورقات. فالدور ديالك، كليكي على ورقة باش تحطها.</p><ul><li>نفس الرقم كيجمع الورقة من الطابلة، ومعاها التسلسل اللي تابعها. من بعد 7 كاين 10، ثم 11 و12.</li><li>إلا جمعتي الطابلة كاملة: ميسّا، نقطة وحدة. آخر ورقة فالدورة ما كتحسبش ميسّا.</li><li>إلا شدّيتي نفس الورقة اللي حط الكمبيوتر مباشرة: ضربة، نقطة وحدة.</li><li>جوج بنفس الرقم: روندا (1). ثلاثة: ترينگا (5). الإعلان أوتوماتيكي؛ الأقوى كياخد مجموع النقط فور التوزيع.</li><li>آخر واحد جمع كياخد الباقي. كل ورقة فوق 20 كتزيد نقطة. أول واحد وصل 41 كيربح.</li></ul><p class="note">هاد النسخة بجوج لاعبين وبالإعلان الأوتوماتيكي. قواعد الديار كتقدر تختلف.</p><button id="close-help">فهمت، نلعب!</button></dialog>
 <script src="engine.js"></script><script src="ui.js"></script>
 </body></html>
