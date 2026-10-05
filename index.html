@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102d27"><title>روندا • الكارطة المغربية</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a href="./index.html" class="brand">الكارطة <span>البلدية</span></a><div class="actions"><button id="rules">كيفاش نلعب؟</button><button id="new">لعبة جديدة</button></div></header>
+<main>
+<div class="heading"><div><small>قهوة، كارطة، وشي ميسّا.</small><h1>روندا<span>RONDA</span></h1></div><div class="goal">الهدف <b>41</b> نقطة</div></div>
+<section class="game" aria-label="طابلة اللعب">
+<div class="player opponent"><div class="avatar">☕</div><div><b>الكمبيوتر</b><small id="bot-count"></small></div><strong id="bot-score">0</strong></div>
+<div id="opponent-hand" class="hand backs" aria-label="ورق الكمبيوتر"></div>
+<div class="table-wrap"><div class="deck"><img src="assets/cards/back.png" alt="الرزمة"><span id="stock"></span></div><div id="table" class="table" aria-label="الورق فالطابلة"></div></div>
+<div class="message" id="message" role="status" aria-live="polite"></div>
+<div id="hand" class="hand" aria-label="الورق ديالك"></div>
+<div class="player self"><div class="avatar">👤</div><div><b>نتا</b><small id="my-count"></small></div><strong id="my-score">0</strong></div>
+<div id="end" class="end" hidden><h2 id="result"></h2><p id="summary"></p><button id="continue">الدورة الجاية</button></div>
+</section>
+<footer><span id="round"></span><span>جوج لاعبين · ضد الكمبيوتر</span><button id="sound" aria-pressed="false">الصوت: مطفي</button></footer>
+</main>
+<dialog id="help"><h2>كيفاش تلعب الروندا؟</h2><p>كتاخد 3 ورقات. فالدور ديالك، كليكي على ورقة باش تحطها.</p><ul><li>نفس الرقم كيجمع الورقة من الطابلة، ومعاها التسلسل اللي تابعها. من بعد 7 كاين 10، ثم 11 و12.</li><li>إلا جمعتي الطابلة كاملة: ميسّا، نقطة وحدة. آخر ورقة فالدورة ما كتحسبش ميسّا.</li><li>إلا شدّيتي نفس الورقة اللي حط الكمبيوتر مباشرة: ضربة، نقطة وحدة.</li><li>جوج بنفس الرقم: روندا (1). ثلاثة: ترينگا (5). الإعلان أوتوماتيكي؛ الأقوى كياخد مجموع النقط فور التوزيع.</li><li>آخر واحد جمع كياخد الباقي. كل ورقة فوق 20 كتزيد نقطة. أول واحد وصل 41 كيربح.</li></ul><p class="note">هاد النسخة بجوج لاعبين وبالإعلان الأوتوماتيكي. قواعد الديار كتقدر تختلف.</p><button id="close-help">فهمت، نلعب!</button></dialog>
+<script src="engine.js"></script><script src="ui.js"></script>
+</body></html>
+
